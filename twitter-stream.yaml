@@ -1,0 +1,35 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: twitter-stream
+  labels:
+    name: twitter-stream
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: twitter-stream
+    spec:
+      containers:
+      - name: twitter-to-pubsub
+        image: gcr.io/rising-minutia-254502/pubsub-bq-pipe:v1
+        env:
+        - name: PROCESSINGSCRIPT
+          value: twitter-to-pubsub
+        # Change this to your pubsub topic
+        - name: PUBSUB_TOPIC
+          value: projects/rising-minutia-254502/topics/mypubsub
+        # Change the following four settings to your twitter credentials
+        # information.
+        - name: CONSUMERKEY
+          value: l80KByHE1iJWiZIVzOmWaRRLF
+        - name: CONSUMERSECRET
+          value: UY8sLWjOVdPzLIGfuNweCxtsA63ZcWhbU1r8vbkVaxfzfFu8tE
+        - name: ACCESSTOKEN
+          value: 1032717608066469888-DcWligCWf7c5m3x8MsjBazrslEkF0q
+        - name: ACCESSTOKENSEC
+          value: ziI7VUNTGGmrbcfRqkx7TDNtDq8Z4efvkHZT3d4sUA3i8
+        - name: TWSTREAMMODE
+#          value: sample
+          value: filtered
