@@ -12,6 +12,5 @@ ADD twitter-to-pubsub.py /twitter-to-pubsub.py
 ADD pubsub-to-bigquery.py /pubsub-to-bigquery.py
 ADD controller.py /controller.py
 ADD utils.py /utils.py
-ADD Dockerfile_for_reference /Dockerfile_for_reference
 
 CMD python controller.py
