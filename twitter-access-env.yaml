@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: twitter-access-env
+type: Opaque
+data:
+  consumer_key: bDgwS0J5SEUxaUpXaVpJVnpPbVdhUlJMRg==
+  consumer_secret: VVk4c0xXak9WZFB6TElHZnVOd2VDeHRzQTYzWmNXaGJVMXI4dmJrVmF4ZnpmRnU4dEU=
+  access_token: MTAzMjcxNzYwODA2NjQ2OTg4OC1EY1dsaWdDV2Y3YzVtM3g4TXNqQmF6cnNsRWtGMHE=
+  access_token_sec: emlJN1ZVTlRHR21yYmNmUnFreDdURE50RHE4WjRlZnZrSFpUM2Q0c1VBM2k4

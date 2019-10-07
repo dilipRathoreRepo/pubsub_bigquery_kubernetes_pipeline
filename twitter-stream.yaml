@@ -17,19 +17,29 @@ spec:
         env:
         - name: PROCESSINGSCRIPT
           value: twitter-to-pubsub
-        # Change this to your pubsub topic
         - name: PUBSUB_TOPIC
           value: projects/rising-minutia-254502/topics/mypubsub
-        # Change the following four settings to your twitter credentials
-        # information.
+        ## twitter credentials
         - name: CONSUMERKEY
-          value: l80KByHE1iJWiZIVzOmWaRRLF
+          valueFrom:
+            secretKeyRef:
+              name: twitter-access-env
+              key: consumer_key
         - name: CONSUMERSECRET
-          value: UY8sLWjOVdPzLIGfuNweCxtsA63ZcWhbU1r8vbkVaxfzfFu8tE
+          valueFrom:
+            secretKeyRef:
+              name: twitter-access-env
+              key: consumer_secret
         - name: ACCESSTOKEN
-          value: 1032717608066469888-DcWligCWf7c5m3x8MsjBazrslEkF0q
+          valueFrom:
+            secretKeyRef:
+              name: twitter-access-env
+              key: access_token
         - name: ACCESSTOKENSEC
-          value: ziI7VUNTGGmrbcfRqkx7TDNtDq8Z4efvkHZT3d4sUA3i8
+          valueFrom:
+            secretKeyRef:
+              name: twitter-access-env
+              key: access_token_sec
         - name: TWSTREAMMODE
 #          value: sample
           value: filtered
