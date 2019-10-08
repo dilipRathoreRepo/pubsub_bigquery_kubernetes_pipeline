@@ -50,6 +50,8 @@ spec:
     stage('Test') {
       steps {
         container('pythonenv') {
+          sh label: '', script: "echo $PYTHONPATH"
+          sh label: '', script: "ls -lrt"
           sh label: '', script: "nosetests --with-xunit --all-modules --traverse-namespace --with-coverage --cover-package=pubsub-pipe-image --cover-inclusive"
           sh label: '', script: "python -m coverage xml --include=pubsub-pipe-image*"
           sh label: '', script: "pylint -f parseable -d I0011,R0801 pubsub-pipe-image | tee pylint.out"
