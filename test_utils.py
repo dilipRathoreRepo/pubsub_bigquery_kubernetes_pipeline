@@ -1,5 +1,5 @@
 import pytest
-from utils import flatten
+import pubsub-pipe-image.utils as utils
 
 
 @pytest.fixture
@@ -8,7 +8,7 @@ def lst():
     return lst
 
 def test_flatten(lst):
-    val = flatten(lst)
+    val = utils.flatten(lst)
     list1 = []
     for e in val:
         list1.append(e)
