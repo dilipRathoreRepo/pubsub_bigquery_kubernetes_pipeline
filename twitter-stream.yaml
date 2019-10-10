@@ -42,4 +42,4 @@ spec:
               key: access_token_sec
         - name: TWSTREAMMODE
 #          value: sample
-          value: filtered
+          value: non-filtered
